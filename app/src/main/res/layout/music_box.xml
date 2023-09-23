@@ -1,0 +1,68 @@
+<!-- music_box.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <!-- 专辑图像 -->
+    <ImageView
+        android:id="@+id/albumImage"
+        android:layout_width="113dp"
+        android:layout_height="109dp"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="16dp">
+
+        <!-- 歌曲名称 -->
+        <TextView
+            android:id="@+id/songName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="歌曲名称"/>
+
+        <!-- 歌手 -->
+
+        <!-- 播放按钮和下载按钮 -->
+
+        <TextView
+            android:id="@+id/artistName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="歌手"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/playButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:text="播放"
+                app:icon="@drawable/ic_launcher_foreground"
+                app:iconPadding="20dp" />
+
+            <Button
+                android:id="@+id/downloadButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="下载"
+                app:icon="@android:drawable/ic_menu_save" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
