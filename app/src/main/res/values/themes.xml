@@ -1,9 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.MusicTool" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- 主颜色 -->
+        <item name="colorPrimary">#87CEFA</item> <!-- 浅蓝色 -->
+        <!-- 主颜色变体 -->
+        <item name="colorPrimaryVariant">#4682B4</item> <!-- 稍深的蓝色 -->
+        <!-- 辅助颜色 -->
+        <item name="colorAccent">#5F9EA0</item> <!-- 辅助蓝绿色 -->
+        <!-- 状态栏颜色 -->
+        <item name="android:statusBarColor">#FFFFFFFF</item>
+        <!-- 状态栏图标颜色 -->
+        <item name="android:windowLightStatusBar">true</item>
+
     </style>
 
     <style name="Theme.MusicTool" parent="Base.Theme.MusicTool" />
+
 </resources>

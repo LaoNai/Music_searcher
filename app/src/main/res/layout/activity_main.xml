@@ -1,93 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <!--顶部盒子-->
-    <LinearLayout
-        android:id="@+id/regionLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="5dp"
-        android:gravity="center_vertical"
-        android:layout_marginHorizontal="50dp"
-        >
-
-
-        <Button
-            android:id="@+id/seekbutton"
-            style="@style/Widget.Material3.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="5dp"
-
-            android:layout_weight="1"
-            android:text="搜索"
-            android:textColor="#6750a4"
-            android:textSize="18dp" />
-
-        <Button
-            android:id="@+id/localbutton"
-            style="@style/Widget.Material3.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="11dp"
-            android:layout_marginTop="5dp"
-            android:text="本地"
-            android:textColor="#6750a4"
-            android:textSize="18dp"
-            android:layout_weight="1"/>
-
-
-    </LinearLayout>
+    tools:context="top.papierkran.musictool.MainActivity">
 
     <!-- 搜索栏 -->
     <LinearLayout
         android:id="@+id/searchLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="70dp"
-        android:layout_marginHorizontal="30dp">
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="30dp"
+        android:orientation="horizontal">
 
         <EditText
             android:id="@+id/searchEditText"
-            android:layout_width="10dp"
-            android:layout_weight="1"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="输入歌名或歌手"/>
+            android:layout_weight="1"
+            android:hint="输入歌名或歌手" />
 
         <Button
             android:id="@+id/searchButton"
             style="@style/Widget.MaterialComponents.Button"
             android:layout_width="wrap_content"
-
             android:layout_height="55dp"
             android:layout_marginStart="14dp"
             android:text="搜索"
-android:textSize="16dp"
-
-            />
+            android:textSize="16dp" />
     </LinearLayout>
-
-    <!-- ScrollView，固定在搜索栏上方 -->
     <ScrollView
         android:id="@+id/musicScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/searchLayout"
-        android:layout_above="@+id/responseTextView"
         android:layout_marginTop="10dp">
 
         <LinearLayout
@@ -96,16 +43,101 @@ android:textSize="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </LinearLayout>
+
     </ScrollView>
 
-    <!-- 响应文本视图，显示在底部 -->
-    <TextView
-        android:id="@+id/responseTextView"
+    <!-- 悬浮盒子 -->
+    <LinearLayout
+        android:id="@+id/floatingBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
+        android:layout_above="@+id/bottomBar"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="8dp"
+        android:elevation="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/albumArt"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="12dp"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/songName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="歌曲名称"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/playButton"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="8dp"
+            />
+
+        <ImageView
+            android:id="@+id/nextButton"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            />
+
+    </LinearLayout>
+
+    <!-- 底部盒子 -->
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="16dp"/>
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="首页"
+            android:textColor="@android:color/black"
+            android:background="@android:color/white"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/myButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="我的"
+            android:textColor="@android:color/black"
+            android:background="@android:color/white"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/lrcButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomBar"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="90dp"
+        android:text="词"
+        android:textSize="16sp"
+        android:tint="@color/black"
+        app:backgroundTint="@color/tianlan"
+        />
 
 </RelativeLayout>
