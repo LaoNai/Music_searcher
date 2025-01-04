@@ -76,7 +76,7 @@
             android:layout_height="55dp"
             android:layout_marginStart="14dp"
             android:text="搜索"
-android:textSize="16dp"
+            android:textSize="16dp"
 
             />
     </LinearLayout>
@@ -87,7 +87,6 @@ android:textSize="16dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/searchLayout"
-        android:layout_above="@+id/responseTextView"
         android:layout_marginTop="10dp">
 
         <LinearLayout
@@ -96,16 +95,42 @@ android:textSize="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </LinearLayout>
-    </ScrollView>
 
-    <!-- 响应文本视图，显示在底部 -->
-    <TextView
-        android:id="@+id/responseTextView"
+    </ScrollView>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="16dp"/>
+        android:layout_height="match_parent"
+
+        >
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/lrcButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+
+            android:layout_marginBottom="16dp"
+            android:text="歌词"
+            android:tint="@color/black"
+            app:layout_anchorGravity="top"/>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+<!--    &lt;!&ndash; 响应文本视图，显示在底部 &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/responseTextView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text=""-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginHorizontal="16dp"/>-->
+
 
 </RelativeLayout>
